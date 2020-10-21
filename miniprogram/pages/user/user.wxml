@@ -7,12 +7,12 @@
     </view>
     <view class="user-right">
       <view class="user-status">{{userInfo.nickName? userInfo.nickName : '未登录'}}</view>
-      <view class="login" bindtap="login">登录</view>
+      <view class="login" bindtap="login">{{userInfo.nickName? '已登录' : '登录'}}</view>
     </view>
    </view>
   </view>
   <view class="content">
-    <view class="link-item" wx:for="{{tabs}}">
+    <view class="link-item" wx:for="{{tabs}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" data-url="{{item.text}}" bindtap="goTo">
       <view class="left">
         <text class="iconfont iconyouhuiquan"></text>
         <text class="text">{{item.text}}</text>

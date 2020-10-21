@@ -75,10 +75,11 @@ Page({
       }
     })
   },
-  goTo() {
-    console.log('导航')
+  goTo(options) {
+    console.log('options',options);
+    let url = options.target.dataset.url;
     wx.navigateTo({
-      url: 'pages/child/index',
+      url: `../../pages/child/index?url=${url}`,
     })
   },
   /**
