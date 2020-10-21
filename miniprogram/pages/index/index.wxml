@@ -1,2 +1,31 @@
-<!--miniprogram/pages/index/index.wxml-->
-<text>miniprogram/pages/index/index.wxml</text>
+<view>
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<button bindtap="tapLogin">登录</button>
+<button bindtap="send">发送</button>
+<button bindtap="model">模拟对话框</button>
+<text>{{msg}}</text>
+<text>{{userInfo.nickName}}</text>
+<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" ></image>
+<view>
+<text wx:if="{{sex}}">女</text>
+<text wx:else>男</text>
+</view>
+<view wx:for="{{list}}">
+  {{index}}: {{item.label}}
+</view>
+
+<view wx:for="{{list}}" wx:for-index="idx" wx:for-item="project">
+  {{idx}}: {{project.label}}
+</view>
+
+<view>
+<switch wx:for="{{objectArray}}" wx:key="unique" > {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+</view>
+<button bindtap="scan">扫一扫</button>
+<button bindtap="show">图片</button>
+<button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+<view wx:else>请升级微信版本</view>
+</view>

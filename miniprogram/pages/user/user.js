@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    msg: 'hello world'
+  },
+  clickMe: function() {
+    this.setData({ msg: "Hello World" })
   },
 
   /**

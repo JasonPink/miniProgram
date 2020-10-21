@@ -1,2 +1,4 @@
-<!--miniprogram/pages/user/user.wxml-->
-<text>miniprogram/pages/user/user.wxml</text>
+<view>
+  <text>{{msg}}</text>
+  <button bindtap="clickMe">点击我</button>
+</view>
