@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/index/index",
     "pages/found/found",
     "pages/message/message",
-    "pages/user/user"
+    "pages/child/index"
   ],
   "tabBar": {
     "color": "#333333",

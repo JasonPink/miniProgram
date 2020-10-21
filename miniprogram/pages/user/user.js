@@ -5,12 +5,82 @@ Page({
    * 页面的初始数据
    */
   data: {
-    msg: 'hello world'
+    msg: 'hello world',
+    userInfo: {
+      nickName: '',
+      avatarUrl: ''
+    },
+    tabs: [
+      {
+        icon: 'iconyouhuiquan',
+        text: '优惠券'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '联系客服'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '我的权益'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '我的积分'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '积分商城'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '抽奖记录'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '检测报告'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '相关协议'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '隐私政策'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '关于我们'
+      },
+      {
+        icon: 'iconyouhuiquan',
+        text: '历史记录'
+      },
+    ]
   },
-  clickMe: function() {
-    this.setData({ msg: "Hello World" })
+  login() {
+    let self = this;
+    wx.getSetting({
+      success (res){
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success: function(res) {
+              console.log(res.userInfo);
+              self.setData({
+                userInfo: res.userInfo
+              })
+            }
+          })
+        }
+      }
+    })
   },
-
+  goTo() {
+    console.log('导航')
+    wx.navigateTo({
+      url: 'pages/child/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

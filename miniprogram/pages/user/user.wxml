@@ -1,4 +1,25 @@
-<view>
-  <text>{{msg}}</text>
-  <button bindtap="clickMe">点击我</button>
-</view>
+<scroll-view class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view class="header">
+   <view class="user">
+    <view class="user-left">
+      <view class="photo" wx:if="{{!userInfo.avatarUrl}}"></view>
+      <image wx:else class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="user-right">
+      <view class="user-status">{{userInfo.nickName? userInfo.nickName : '未登录'}}</view>
+      <view class="login" bindtap="login">登录</view>
+    </view>
+   </view>
+  </view>
+  <view class="content">
+    <view class="link-item" wx:for="{{tabs}}">
+      <view class="left">
+        <text class="iconfont iconyouhuiquan"></text>
+        <text class="text">{{item.text}}</text>
+      </view>
+      <view class="right" bindtap="goTo">
+        <text class="iconfont iconjiantou"></text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

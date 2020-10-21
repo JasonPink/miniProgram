@@ -1,1 +1,63 @@
 /* miniprogram/pages/user/user.wxss */
+.container{
+  height: 1300rpx;
+}
+.header{
+  height: 200rpx;
+  border-bottom: 15rpx solid #dfdfdf;
+}
+.content{
+  padding: 0 30rpx;
+}
+.link-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 75rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.link-item .text{
+  margin-left: 15rpx;
+}
+.iconfont {
+  color: #9a9a9a;
+  font-size: 44rpx;
+}
+.left{
+  display: flex;
+  align-items: center;
+}
+.user{
+  display: flex;
+  height: 100%;
+}
+.user-left{
+  width: 200rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+.user-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10rpx;
+}
+.user-status{
+  padding-bottom: 20rpx;
+}
+.login{
+  background: #1296db;
+  color: #fff;
+  text-align: center;
+  border-radius: 5rpx;
+  padding: 5rpx 45rpx;
+  font-size: 28rpx;
+}
